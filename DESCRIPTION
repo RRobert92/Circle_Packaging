@@ -3,7 +3,7 @@ Type: Package
 Title: Calculate circle packaging
 Version: 0.1.0
 Author: Robert Kiewisz
-Maintainer: The package maintainer <robert.kiewisz@gmail.com>
+Maintainer: Robert Kiewisz <robert.kiewisz@gmail.com>
 Description:Generic function for the estimation of a circle packing in a cricle. The circle pacaging is based on equestion: Circle_no = (pi * R^2)/(P * r^2). Where P = pi/(0.7175*(R/r)^0.0529 ); P was established based on power trendline of circle density from http://www.packomania.com/
 License: General Public License (GPL) version 3.0 
 Encoding: UTF-8
