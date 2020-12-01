@@ -10,30 +10,30 @@
 # Author: Robert Kiewisz
 # Created: 2020-11-30
 ################################################################################
-Circle_Fit <- function(x, y, type){
-  if(missing(type)){
+Circle_Fit <- function(x, y, type) {
+  if (missing(type)) {
     type <- "text"
   }
-  if(missing(y)) warning('r for smaller circle radius was not specified')
+  if (missing(y)) warning("r for smaller circle radius was not specified")
 
-  if(exists("x") && exists("y")){
-  x <- as.numeric(x)
-  y <- as.numeric(y)
+  if (exists("x") && exists("y")) {
+    x <- as.numeric(x)
+    y <- as.numeric(y)
 
-  P <- (0.7175*(x/y)^0.0529)
-  n_circle <- round((pi*x^2)/((pi/P)*y^2),0)
+    P <- (0.7175 * (x / y)^0.0529)
+    n_circle <- round((pi * x^2) / ((pi / P) * y^2), 0)
 
-  if(type == "text"){
-    print("Number of fitted circles")
-    print(n_circle)
-    print("Estimated packaging")
-    paste(round((0.5589*(x/y)+74.101),1), "%", sep = "")
-
-  }else if(type == "data"){
-    n_circle <- data.frame("No_circle" = n_circle,
-                       "Packaging" = round((0.5589*(x/y)+74.101),1))
-    print(n_circle)
-
-  }
+    if (type == "text") {
+      print("Number of fitted circles")
+      print(n_circle)
+      print("Estimated packaging")
+      paste(round((0.7175 * (x / y)^0.0529) * 100, 1), "%", sep = "")
+    } else if (type == "data") {
+      n_circle <- data.frame(
+        "No_circle" = n_circle,
+        "Packaging" = round((0.7175 * (x / y)^0.0529) * 100, 1)
+      )
+      print(n_circle)
+    }
   }
 }
